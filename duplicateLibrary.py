@@ -1,4 +1,5 @@
 import collections
+import time
 import os
 def listorfile(user):
     """return if user is file or list"""
@@ -29,7 +30,6 @@ def file(user):
         a=p.readlines()
         p.close()
         original=len(a)
-        start_time = time.time()
         while 1:
             s=[item for item, count in collections.Counter(a).items() if count > 1]#found duplicate 
             if len(s)==0:
@@ -39,6 +39,45 @@ def file(user):
                 a.reverse()
                 while len(s)-1>=extract:
                     a.remove(s[extract])#remove duplicate from original list
+                    extract+=1
+            a.reverse()
+    except:
+        return "error"
+
+def listaduplicate(user):
+    """return only duplicate in a list"""
+    l=[]
+    while 1:
+        s=[item for item, count in collections.Counter(user).items() if count > 1]#found duplicate 
+        if len(s)==0:
+            return l
+            break
+        else:
+            extract=0
+            user.reverse()
+            while len(s)-1>=extract:
+                user.remove(s[extract])#remove duplicate from original list
+                l.append(s[extract])
+                extract+=1
+        user.reverse()
+
+def duplicatefile(user):
+    """return if user a list of  duplicate elements in a file"""
+    m=[]
+    try:
+        p=open(user+".txt","r")
+        a=p.readlines()
+        p.close()
+        while 1:
+            s=[item for item, count in collections.Counter(a).items() if count > 1]#found duplicate 
+            if len(s)==0:
+                return m
+            else:
+                extract=0
+                a.reverse()
+                while len(s)-1>=extract:
+                    a.remove(s[extract])#remove duplicate from original list
+                    m.append(s[extract])
                     extract+=1
             a.reverse()
     except:
