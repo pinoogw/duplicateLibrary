@@ -42,6 +42,9 @@ def lista(user):
                 user.remove(s[extract])#remove duplicate from original list
                 extract+=1
         user.reverse()
+    
+    
+        
 def file(user):
     """return if user a list of no duplicate elements in a file"""
     try:
@@ -80,6 +83,7 @@ def listaduplicate(user):
                 extract+=1
         user.reverse()
 
+        
 def duplicatefile(user):
     """return if user a list of  duplicate elements in a file"""
     m=[]
