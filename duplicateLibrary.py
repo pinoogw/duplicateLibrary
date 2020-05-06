@@ -9,6 +9,25 @@ def listorfile(user):
     except:
         return "list"
 
+
+    
+    
+def ListaDeleteLista2(lista,Lista2):
+    contatore=0
+    ricontatore=len(Lista2)
+    while contatore!=ricontatore:
+        if Lista2[contatore] in lista:
+            eliminare=0
+            while eliminare!=len(lista):
+                if lista[eliminare]==Lista2[contatore]:
+                    lista.pop(eliminare)
+                    eliminare-=1
+                eliminare+=1
+        contatore+=1
+    return lista   
+
+
+
 def lista(user):
     """return list without duplicate"""
     while 1:
