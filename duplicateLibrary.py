@@ -1,5 +1,4 @@
 import collections
-import time
 import os
 def listorfile(user):
     """return if user is file or list"""
