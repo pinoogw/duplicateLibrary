@@ -38,7 +38,7 @@ def lista(user):
             extract=0
             user.reverse()
             while len(s)-1>=extract:
-                user.remove(s[extract])#remove duplicate from original list
+                user.remove(s[extract]) #remove duplicate from original list
                 extract+=1
         user.reverse()
     
@@ -77,7 +77,7 @@ def listaduplicate(user):
             extract=0
             user.reverse()
             while len(s)-1>=extract:
-                user.remove(s[extract])#remove duplicate from original list
+                user.remove(s[extract]) #remove duplicate from original list
                 l.append(s[extract])
                 extract+=1
         user.reverse()
