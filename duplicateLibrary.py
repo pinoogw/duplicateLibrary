@@ -1,7 +1,7 @@
 import collections
 import os
 def listorfile(user):
-    """return if user is file or list"""
+    """?return if user is file or list"""
     try:
         if  os.path.exists(user+".txt") is True:
             return "File"
@@ -28,9 +28,9 @@ def ListaDeleteLista2(lista,Lista2):
 
 
 def lista(user):
-    """return list without duplicate"""
+    """?return list without duplicate"""
     while 1:
-        s=[item for item, count in collections.Counter(user).items() if count > 1]#found duplicate 
+        s=[item for item, count in collections.Counter(user).items() if count > 1] #found duplicate 
         if len(s)==0:
             return user
             break
@@ -45,31 +45,31 @@ def lista(user):
     
         
 def file(user):
-    """return if user a list of no duplicate elements in a file"""
+    """?return if user a list of no duplicate elements in a file"""
     try:
         p=open(user+".txt","r")
         a=p.readlines()
         p.close()
         original=len(a)
         while 1:
-            s=[item for item, count in collections.Counter(a).items() if count > 1]#found duplicate 
+            s=[item for item, count in collections.Counter(a).items() if count > 1] #found duplicate 
             if len(s)==0:
                 return a
             else:
                 extract=0
                 a.reverse()
                 while len(s)-1>=extract:
-                    a.remove(s[extract])#remove duplicate from original list
+                    a.remove(s[extract]) #remove duplicate from original list
                     extract+=1
             a.reverse()
     except:
         return "error"
 
 def listaduplicate(user):
-    """return only duplicate in a list"""
+    """?return only duplicate in a list"""
     l=[]
     while 1:
-        s=[item for item, count in collections.Counter(user).items() if count > 1]#found duplicate 
+        s=[item for item, count in collections.Counter(user).items() if count > 1] #found duplicate 
         if len(s)==0:
             return l
             break
@@ -84,14 +84,14 @@ def listaduplicate(user):
 
         
 def duplicatefile(user):
-    """return if user a list of  duplicate elements in a file"""
+    """?return if user a list of  duplicate elements in a file"""
     m=[]
     try:
         p=open(user+".txt","r")
         a=p.readlines()
         p.close()
         while 1:
-            s=[item for item, count in collections.Counter(a).items() if count > 1]#found duplicate 
+            s=[item for item, count in collections.Counter(a).items() if count > 1] #found duplicate 
             if len(s)==0:
                 return m
             else:
