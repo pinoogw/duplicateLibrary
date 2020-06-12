@@ -1,7 +1,7 @@
 import collections
 import os
 def listorfile(user):
-    """?return if user is file or list"""
+    """Return if user is file or list!"""
     try:
         if  os.path.exists(user+".txt") is True:
             return "File"
@@ -28,7 +28,7 @@ def ListaDeleteLista2(lista,Lista2):
 
 
 def lista(user):
-    """?return list without duplicate"""
+    """Return list without duplicate!"""
     while 1:
         s=[item for item, count in collections.Counter(user).items() if count > 1] #found duplicate 
         if len(s)==0:
@@ -45,12 +45,11 @@ def lista(user):
     
         
 def file(user):
-    """?return if user a list of no duplicate elements in a file"""
+    """Return if user a list of no duplicate elements in a file!"""
     try:
         p=open(user+".txt","r")
         a=p.readlines()
         p.close()
-        original=len(a)
         while 1:
             s=[item for item, count in collections.Counter(a).items() if count > 1] #found duplicate 
             if len(s)==0:
@@ -66,7 +65,7 @@ def file(user):
         return "error"
 
 def listaduplicate(user):
-    """?return only duplicate in a list"""
+    """Return only duplicate in a list!"""
     l=[]
     while 1:
         s=[item for item, count in collections.Counter(user).items() if count > 1] #found duplicate 
@@ -84,7 +83,7 @@ def listaduplicate(user):
 
         
 def duplicatefile(user):
-    """?return if user a list of  duplicate elements in a file"""
+    """Return if user a list of  duplicate elements in a file!"""
     m=[]
     try:
         p=open(user+".txt","r")
