@@ -2,15 +2,13 @@ import collections
 import os
 def listorfile(user):
     """Return if user is file or list!"""
-    try:
-        if  os.path.exists(user+".txt") is True:
-            return "File"
-    except:
+    if  os.path.exists(user+".txt") is True:
+        return "File"
+    else:
         return "list"
 
 
-    
-    
+       
 def ListaDeleteLista2(lista,Lista2):
     contatore=0
     ricontatore=len(Lista2)
@@ -23,6 +21,7 @@ def ListaDeleteLista2(lista,Lista2):
                     eliminare-=1
                 eliminare+=1
         contatore+=1
+        
     return lista   
 
 
@@ -30,6 +29,7 @@ def ListaDeleteLista2(lista,Lista2):
 def lista(user):
     """Return list without duplicate!"""
     while 1:
+        
         s=[item for item, count in collections.Counter(user).items() if count > 1] #found duplicate 
         if len(s)==0:
             return user
@@ -51,6 +51,7 @@ def file(user):
         a=p.readlines()
         p.close()
         while 1:
+            
             s=[item for item, count in collections.Counter(a).items() if count > 1] #found duplicate 
             if len(s)==0:
                 return a
@@ -68,6 +69,7 @@ def listaduplicate(user):
     """Return only duplicate in a list!"""
     l=[]
     while 1:
+        
         s=[item for item, count in collections.Counter(user).items() if count > 1] #found duplicate 
         if len(s)==0:
             return l
@@ -90,6 +92,7 @@ def duplicatefile(user):
         a=p.readlines()
         p.close()
         while 1:
+            
             s=[item for item, count in collections.Counter(a).items() if count > 1] #found duplicate 
             if len(s)==0:
                 return m
